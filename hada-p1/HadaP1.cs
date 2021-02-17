@@ -10,7 +10,7 @@ namespace hada_p1
     {
         public static double Seconds2Minutes (double s)
         {
-            return s / 60;
+            return s == 0 ? 0 : s / 60;
         }
     }
 }
