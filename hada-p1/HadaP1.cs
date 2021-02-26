@@ -16,7 +16,7 @@ namespace hada_p1
 
         public static double Minutes2Seconds (double m)
         {
-            return m == 0 ? 0: m * 60; /// si min no es 0 se mult por 60 para pasarlo a segundos
+            return m == 0 ? 0: m * 60; /// si min no es 0 se mult por 60 para pasarlo a seg
         }
 
         public static double Hours2Minutes (double h)
