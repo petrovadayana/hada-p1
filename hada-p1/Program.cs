@@ -22,7 +22,7 @@ namespace hada_p1
                 return line;
             }
         }
-        static double getValue(char line, double valor) /// recibimos 'm'/'s' y valor a convertir
+        static double getValue(char line, double valor) /// recibimos 'm'/'s'/'h' y valor a convertir
         {
             switch (line)
             {
@@ -30,6 +30,8 @@ namespace hada_p1
                     return HadaP1.Minutes2Seconds(valor);   /// si es m: de min a seg
                 case 's':
                     return HadaP1.Seconds2Minutes(valor);  /// si es s: de seg a min
+                case 'h':
+                    return HadaP1.Hours2Minutes(valor);    /// si es h: de horas a min
                 default:
                     return -1;
             }
@@ -37,7 +39,7 @@ namespace hada_p1
 
         static char getType()   /// mensaje de inicio programa y dato: tipo conversion 
         {
-            Console.Write("Valor a introducir: 's' (segundos) o 'm' (minutos) / q Quit: ");
+            Console.Write("Tipo de unidad: 's' (segundos) |'m' (minutos) | 'h' (horas) | 'q' Quit: ");
             return Console.ReadLine()[0];
         }
 
@@ -56,7 +58,7 @@ namespace hada_p1
 
                     if (result != -1)
                     {
-                        Console.WriteLine("Result: " + result); /// devolvemos resultado
+                        Console.WriteLine("Resultado: " + result); /// devolvemos resultado
                     }
                 }
             } while (isActive); /// mientras sea true (y no es por tanto 'q')
